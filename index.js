@@ -9,11 +9,49 @@ document.addEventListener("click", function (e) {
     handleRemoveClick(e.target.dataset.remove);
   } else if (e.target.id === "complete-order-btn") {
     handleCompleteOrderClick();
+  } else if (e.target.id === "close-modal-btn") {
+    handleCloseModalClick();
   }
+});
+
+document
+  .getElementById("payment-form")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const paymentFormData = new FormData(
+      document.getElementById("payment-form")
+    );
+    const customerName = paymentFormData.get("fullName");
+
+    document.getElementById("modal").classList.add("hidden");
+    document.getElementById(
+      "success-message"
+    ).textContent = `Payment successful! Thanks, ${customerName}! Your order is on its way!`;
+    document.getElementById("success-modal").classList.remove("hidden");
+
+    // Reset rating feedback
+    document.getElementById("rating-feedback").classList.add("hidden");
+    const ratingInputs = document.querySelectorAll('input[name="rating"]');
+    ratingInputs.forEach((input) => (input.checked = false));
+
+    // Clear order
+    order = [];
+    render();
+  });
+
+document.querySelectorAll('input[name="rating"]').forEach(function (radio) {
+  radio.addEventListener("change", function () {
+    document.getElementById("rating-feedback").classList.remove("hidden");
+  });
 });
 
 function handleCompleteOrderClick() {
   document.getElementById("modal").classList.remove("hidden");
+}
+
+function handleCloseModalClick() {
+  document.getElementById("success-modal").classList.add("hidden");
 }
 
 function handleAddClick(itemId) {
@@ -69,7 +107,6 @@ function getFeedHtml() {
 `;
   });
 
-  // Add the Order section if we have items
   if (order.length > 0) {
     feedHtml += getOrderHtml();
   }
