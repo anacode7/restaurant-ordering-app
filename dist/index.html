@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/index-CVDpNjeh.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DzClVRge.css">
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <h1>Jimmy's Diner</h1>
+        <p>The best burgers and pizzas in town.</p>
+      </div>
+    </header>
+
+    <main id="feed"></main>
+
+    <!-- Payment Modal -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-inner">
+        <h2 class="modal-title">Enter card details</h2>
+        <form id="payment-form">
+          <input
+            type="text"
+            name="fullName"
+            placeholder="Enter your name"
+            aria-label="Full Name"
+            required
+          />
+          <input
+            type="text"
+            name="cardNumber"
+            placeholder="Enter card number"
+            aria-label="Card Number"
+            required
+          />
+          <input
+            type="text"
+            name="cvv"
+            placeholder="Enter CVV"
+            aria-label="CVV"
+            required
+          />
+          <button type="submit" class="pay-btn">Pay</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Success/Rating Modal -->
+    <div id="success-modal" class="modal hidden">
+      <div class="modal-inner">
+        <h2 class="modal-title" id="success-message"></h2>
+        <p>Would you like to rate your order?</p>
+        <div class="rating-container">
+          <div class="rating-container">
+            <div class="rating">
+              <input type="radio" name="rating" id="star5" value="5" />
+              <label for="star5" class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="star-svg"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </label>
+              <input type="radio" name="rating" id="star4" value="4" />
+              <label for="star4" class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="star-svg"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </label>
+              <input type="radio" name="rating" id="star3" value="3" />
+              <label for="star3" class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="star-svg"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </label>
+              <input type="radio" name="rating" id="star2" value="2" />
+              <label for="star2" class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="star-svg"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </label>
+              <input type="radio" name="rating" id="star1" value="1" />
+              <label for="star1" class="star">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="star-svg"
+                >
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </label>
+            </div>
+          </div>
+        </div>
+        <p id="rating-feedback" class="rating-feedback hidden">
+          Thank you for your feedback!
+        </p>
+        <button id="close-modal-btn" class="pay-btn">Close</button>
+      </div>
+    </div>
+
+  </body>
+</html>
